@@ -1,0 +1,9 @@
+server:
+  port: 8764                    # 指定该服务的端口
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/ #指定注册服务地址
+spring:
+  application:
+    name: customer1-rest
