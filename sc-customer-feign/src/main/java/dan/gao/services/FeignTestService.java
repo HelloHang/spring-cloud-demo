@@ -1,5 +1,6 @@
 package dan.gao.services;
 
+import dan.gao.services.impl.FeignTestServiceHystrix;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @version 1.0
  */
 
-@FeignClient(value = "service1")
+@FeignClient(value = "service1", fallback = FeignTestServiceHystrix.class)
 public interface FeignTestService
 {
 	@RequestMapping(value = "/hi")
